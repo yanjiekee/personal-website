@@ -1,0 +1,82 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/mixins";
+
+$primary: #567572;      // Sagebrush green
+$secondary: #964F4C;    // Marsala
+
+$light: #FFFAF0;    // Offwhite
+$dark: #696667;     // Granite Grey
+
+$text-light: #FFFAF0;
+$text-dark: #696667;
+
+$navbar-light-color: #FFFAF0;
+$navbar-dark-color: #696667;
+
+// Remove unnecessary .scss file when done
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html {
+    scroll-behavior: smooth;
+}
+
+.homepage h1#title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.homepage div#slide {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: justify;
+}
+
+.homepage a:link {
+    text-decoration: none;
+}
+
+.homepage.main {
+    position: relative;
+    background-color: $primary;
+    height: 100vh;
+}
+
+.homepage.main div#intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    max-width: 35%;
+    max-height: 60%;
+    transform: translate(-50%, -50%);
+    text-align: justify;
+}
+
+.homepage.secondary {
+    position: relative;
+    background-color: $secondary;
+    height: 70vh;
+}
+
+.homepage.footer {
+    position: relative;
+    background-color: $primary;
+    height: 30vh;
+    padding: 30px 30px;
+}
+
+.homepage.footer a {
+    font-size: 12px;
+}
+
+.homepage.footer div#contact{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}

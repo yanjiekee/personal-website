@@ -1,14 +1,86 @@
 <!DOCTYPE html>
 <html lang="en-UK">
     <head>
-        <title>Welcome</title>
+        <title>Y.J. Kee</title>
         <meta charset='UTF-8'>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="img/favicon/site.webmanifest">
+
+        <link rel="stylesheet" href="scss/main.css">
+
+        <!-- CDN Hosted by Microsoft -->
+        <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        <script>
+            $(function(){
+                $("#includeHeader").load("include/header.html");
+            });
+        </script> -->
     </head>
 
     <body>
-        <h1>Hello</h1>
-    </body>
+        <nav class="navbar fixed-top navbar-dark py-3">
+            <a class="navbar-brand" href="#">
+              <!-- <img src="img/favicon/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+              Y.J. Kee's Personal Website
+            </a>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
 
+        <div class="homepage main" id="main">
+            <h1 id="title">#Welcome</h1>
+            <div id="intro">
+                <p>
+                    This is an undergraduate from the Electronic Engineering department trying to create his first website solely to look cool.
+                </p>
+                <p>
+                    Besides, this will also be a place where I share my thoughts, from when I spent all my time, staring out of my table side window.
+                </p>
+            </div>
+            <div id="slide">
+                <a href="#secondary">Read More</a>
+            </div>
+        </div>
+
+        <div class="homepage secondary" id="secondary">
+            <h1 id="title">#MyWork</h1>
+
+            <div id="slide">
+                <a href="#">To the Top</a>
+            </div>
+        </div>
+        <div class="homepage footer">
+            <div id="contact">
+                <p>#Contacts</p>
+                <a href="https://www.facebook.com/yanjiekee" target="_blank">Facebook</a></br>
+                <a href="https://www.instagram.com/yanjiekee/" target="_blank">Instagram</a></br>
+                <a href="https://github.com/yanjiekee" target="_blank">Github</a></br>
+                <a href="https://www.goodreads.com/user/show/70556212-eulerismygod" target="_blank">Goodreads</a></br>
+                <a href="mailto:yanjiekee@gmail.com" target="_top">Email Address</a>
+            </div>
+        </div>
+
+        <!-- jQuery, Popper.js & JavaScript Plugins respectivelys (for Bootstrap) -->
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <script src="js/main.js"></script>
+    </body>
 </html>
