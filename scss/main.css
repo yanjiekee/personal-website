@@ -180,7 +180,7 @@ a {
 }
 a:hover {
   color: #ffe1a4;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]) {
@@ -3917,6 +3917,7 @@ input[type=button].btn-block {
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
+  transition: 0.5s;
 }
 
 .nav-link {
@@ -3997,6 +3998,7 @@ input[type=button].btn-block {
   align-items: center;
   justify-content: space-between;
   padding: 2rem 2rem;
+  transition: 0.5s;
 }
 .navbar .container,
 .navbar .container-fluid,
@@ -9948,12 +9950,12 @@ h3 {
     border-color: #dee2e6;
   }
 }
-html {
-  scroll-behavior: smooth;
+.homepage {
+  height: 90vh;
 }
 
-.homepage {
-  height: 100vh;
+.homepage div#bottomlink {
+  text-align: center;
 }
 
 .footer {

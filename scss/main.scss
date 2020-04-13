@@ -19,11 +19,15 @@ $spacer: 2rem;
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 html {
-    scroll-behavior: smooth;
+    // scroll-behavior: smooth; Using JS instead
 }
 
 .homepage {
-    height: 100vh;
+    height: 90vh;
+}
+
+.homepage div#bottomlink {
+    text-align: center;
 }
 
 .footer {

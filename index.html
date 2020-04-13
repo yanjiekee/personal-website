@@ -4,47 +4,21 @@
         <title>Y.J. Kee</title>
         <meta charset='UTF-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="apple-touch-icon" sizes="180x180" href="/personal_website/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/personal_website/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/personal_website/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/personal_website/img/favicon/site.webmanifest">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="img/favicon/site.webmanifest">
+        <link rel="stylesheet" href="/personal_website/scss/main.css">
 
-        <link rel="stylesheet" href="scss/main.css">
-
-        <!-- CDN Hosted by Microsoft -->
-        <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-        <script>
-            $(function(){
-                $("#includeHeader").load("include/header.html");
-            });
-        </script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="/personal_website/js/main.js"></script>
     </head>
 
     <body>
-        <nav class="navbar fixed-top navbar-dark py-3">
-            <a class="navbar-brand" href="#">
-              <!-- <img src="img/favicon/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt=""> -->
-              Y.J. Kee's Personal Website
-            </a>
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Blogs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-        </nav>
-
+        <div w3-include-html="/personal_website/include/header.html"></div>
         <div class="container-fluid m-0 bg-primary">
-            <div class="homepage p-5">
+            <div class="homepage p-5 d-flex flex-column justify-content-between" id="mainslide">
                 <div class="row">
                     <div class="col-2">
                     </div>
@@ -54,21 +28,23 @@
                         </div>
                         <div class="container-fluid px-5" style="text-align: justify">
                             <p>
-                                This is an undergraduate from the Electronic Engineering department trying to create his first website solely to look cool.
+                                Trying to create my first website as a portfolio and to look cool.
                             </p>
                             <p>
-                                Besides, this will also be a place where I share my thoughts, from when I spent all my time, staring out of my table side window.
+                                This will also be a place where I share my thoughts, from when I spent all my time, staring out of my table side window.
                             </p>
                         </div>
-
                     </div>
                     <div class="col-2">
                     </div>
                 </div>
+                <div class="container pt-3" id="bottomlink">
+                    <a href="#nextslide">Read More &#8595;</a>
+                </div>
             </div>
         </div>
         <div class="container-fluid m-0 bg-secondary">
-            <div class="homepage p-5">
+            <div class="homepage p-5 d-flex flex-column justify-content-between" id="nextslide">
                 <div class="row">
                     <div class="col-2">
                     </div>
@@ -84,28 +60,17 @@
                     <div class="col-2">
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container-fluid m-0 bg-primary">
-            <div class="footer">
-                <div class="container-fluid pt-3 pb-2">
-                    <p>#Contacts</p>
-                </div>
-                <div class="container" style="font-size: 12px">
-                    <a href="https://www.facebook.com/yanjiekee" target="_blank">Facebook</a></br>
-                    <a href="https://www.instagram.com/yanjiekee/" target="_blank">Instagram</a></br>
-                    <a href="https://github.com/yanjiekee" target="_blank">Github</a></br>
-                    <a href="https://www.goodreads.com/user/show/70556212-eulerismygod" target="_blank">Goodreads</a></br>
-                    <a href="mailto:yanjiekee@gmail.com" target="_top">Email Address</a>
+                <div class="container pt-3" id="bottomlink">
+                    <a href="#mainslide">To the Top &#8593;</a>
                 </div>
             </div>
         </div>
+        <div w3-include-html="/personal_website/include/footer.html"></div>
 
-        <!-- jQuery, Popper.js & JavaScript Plugins respectivelys (for Bootstrap) -->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script>includeHTML();</script>
+        <!-- Optional: jQuery, Popper.js & JavaScript Plugins respectively (for Bootstrap) -->
+        <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-        <script src="js/main.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
     </body>
 </html>
