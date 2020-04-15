@@ -1,2 +1,3 @@
 # personal_website
-Personal website using the domain name yanjiekee.com. It is currently hosted on Hostinger's Singapore server.
+Personal website developed from scratch (html, css, and javascript). Currently also using Bootstrap library for responsive design and other components.
+
