@@ -99,6 +99,16 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
+.h0 {
+  display: block;
+  font-size: 4em;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -9961,6 +9971,31 @@ h3 {
 .footer {
   height: 30vh;
   text-align: center;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(500px) scale(0.2);
+  }
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-30vh);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
