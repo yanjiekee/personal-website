@@ -17,23 +17,39 @@
 
     <body>
         <div w3-include-html="/include/header.html"></div>
-        <div class="container-fluid m-0 bg-primary">
-            <div class="homepage d-flex flex-column justify-content-between" id="mainslide">
-                <div>
-                    <div class="container-fluid pt-5 px-3" style="text-align: center">
-                        <h2>#Welcome</h2>
-                    </div>
-                    <div class="container-fluid px-3" style="text-align: center">
-                        <p>Currently under construction... ly, 7899!</p>
+        <div class="container-fuild m-0 p-0 bg-primary">
+            <div class="homepage" id="mainslide">
+                <div class="container-fluid px-4 py-3">
+                    <div class="row">
+                        <div class="paper col-fill">
+                            <div class="container pt-5" style="text-align: center">
+                                <h2>How are you today?</h2>
+                            </div>
+                            <div class="container py-3" style="text-align: center">
+                                <p></p>
+                                <img src="/img/street.jpg" style="max-width:40%"></img></br></br>
+                                <p>Gambateh! Jiayou!</p>
+                                <p>ly, 7899!</p>
+                            </div>
+                        </div>
+                        <div class="side col">
+                            <div class="container pt-5">
+                                <p>Sidebar:</p>
+                                <div class="container box">
+                                    <p>Test</p>
+                                </div>
+                                <div class="container">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="container py-3" id="bottomlink">
+                <!-- <div class="container py-3" id="bottomlink">
                     <a href="#nextslide">Read More &#8595;</a>
-                </div>
+                </div> -->
             </div>
         </div>
-        <div class="container-fluid m-0 bg-secondary">
+        <!-- <div class="container-fluid m-0 bg-secondary">
             <div class="homepage d-flex flex-column justify-content-between" id="nextslide">
 
                 <div>
@@ -49,7 +65,7 @@
                     <a href="#mainslide">To the Top &#8593;</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div w3-include-html="/include/footer.html"></div>
 
         <script>includeHTML();</script>
