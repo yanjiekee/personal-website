@@ -32,6 +32,12 @@ html {
     text-align: center;
 }
 
+.title {
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    color: $text-dark;
+}
+
 .paper {
     background-color: rgb(250, 245, 235);
     background-size: cover;
@@ -50,7 +56,6 @@ html {
 }
 
 .footer {
-    height: 20vh;
     text-align: center;
 }
 
