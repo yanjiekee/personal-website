@@ -1,4 +1,5 @@
 <?php
+require('pusher_config.php');
 require('Persistence.php');
 $comment_post_ID = 1;
 $db = new Persistence();
@@ -18,7 +19,6 @@ $has_comments = (count($comments) > 0);
         <link rel="manifest" href="/img/favicon/site.webmanifest">
 
         <link rel="stylesheet" href="/scss/main.css">
-
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="/js/main.js"></script>
     </head>
@@ -50,7 +50,8 @@ $has_comments = (count($comments) > 0);
                             <p>What do you think about it? In general, regardless of the context.</br>Comment it down below: [Non-existing comment section]</p>
                             <!-- https://www.smashingmagazine.com/2012/05/building-real-time-commenting-system/ -->
                             <div id="comments">
-                                <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':''); ?>">
+                                <ol id="posts-list" class="hfeed<?php echo($has_comments?' has-comments':''); ?>" style="list-style:none;">
+                                <!-- Why add "hfeed" as a class? -->
                                     <li class="no-comments">Be the first to add a comment.</li>
                                         <?php
                                         foreach ($comments as &$comment) {
@@ -96,9 +97,9 @@ $has_comments = (count($comments) > 0);
                                     </form>
                                 </div>
                             </div>
-                            <form action="/about/clear.php" method="post">
+                            <!-- <form action="/about/clear.php" method="post">
                                 <input name="clear" type="submit" value="Delete all comments (Test)"/>
-                            </form>
+                            </form> -->
                             <!-- https://www.smashingmagazine.com/2012/05/building-real-time-commenting-system/ -->
                         </div>
                     </div>
@@ -111,5 +112,12 @@ $has_comments = (count($comments) > 0);
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <!-- For comment section -->
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+        <script src="/js/app.js"></script>
+        <script>
+            var APP_KEY = '<?php echo(APP_KEY); ?>';
+        </script>
     </body>
 </html>

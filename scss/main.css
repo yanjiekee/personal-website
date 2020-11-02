@@ -10129,6 +10129,10 @@ h3 {
   line-height: 1.4em;
 }
 
+#post-list {
+  list-style: none;
+}
+
 #posts-list.has-comments li.no-comments {
   display: none;
 }
