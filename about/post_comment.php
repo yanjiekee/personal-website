@@ -7,9 +7,12 @@ $db = new Persistence();
 $added = $db->add_comment($_POST);
 
 if($added) {
-  header( 'Location: index.php' );
+    // header ( string $header [, bool $replace = TRUE [, int $http_response_code ]] ) : void
+    // Send a raw HTTP header
+    // Function below goes to index.php
+    header( 'Location: index.php' );
 }
 else {
-  header( 'Location: index.php?error=Your comment was not posted due to errors in your form submission' );
+    header( 'Location: index.php?error=Your comment was not posted due to errors in your form submission' );
 }
 ?>
