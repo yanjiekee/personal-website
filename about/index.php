@@ -97,9 +97,9 @@ $has_comments = (count($comments) > 0);
                                     </form>
                                 </div>
                             </div>
-                            <!-- <form action="/about/clear.php" method="post">
+                            <form action="/about/clear.php" method="post">
                                 <input name="clear" type="submit" value="Delete all comments (Test)"/>
-                            </form> -->
+                            </form>
                             <!-- https://www.smashingmagazine.com/2012/05/building-real-time-commenting-system/ -->
                         </div>
                     </div>
@@ -113,11 +113,19 @@ $has_comments = (count($comments) > 0);
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <!-- For comment section -->
-        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-        <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-        <script src="/js/app.js"></script>
-        <script>
-            var APP_KEY = '<?php echo(APP_KEY); ?>';
-        </script>
+        
+        <!-- <script>
+            // Enable pusher logging - don't include this in production
+            Pusher.logToConsole = true;
+
+            var pusher = new Pusher('94b577f129fd48f41527', {
+              cluster: 'ap1'
+            });
+
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('my-event', function(data) {
+              alert(JSON.stringify(data));
+            });
+        </script> -->
     </body>
 </html>

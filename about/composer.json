@@ -1,0 +1,6 @@
+{
+    "require": {
+        "pusher/pusher-php-server": "^4.1",
+        "psr/log": "^1.1"
+    }
+}
