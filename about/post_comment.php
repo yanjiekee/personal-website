@@ -2,6 +2,7 @@
 <?php
 require('Persistence.php');
 require('pusher_config.php');
+// require __DIR__ . '/vendor/autoload.php';
 
 // To make sure this is a Ajax request! Refer: js/app.js function: postComment(data)
 $ajax = ($_SERVER[ 'HTTP_X_REQUESTED_WITH' ] === 'XMLHttpRequest');
@@ -26,6 +27,8 @@ function sendAjaxResponse($added) {
         header( 'Status: 201' );
         echo( json_encode($added) );    // $added contains all the data required, it is encoded into JSON for JSON-based API
     }
+    // Similar example: https://stackoverflow.com/questions/4064444/returning-json-from-a-php-script
+    // Don't know what's the purpose of returning JSON from php script...
     else {
         header( 'Status: 400' );
     }
