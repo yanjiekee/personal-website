@@ -1,4 +1,3 @@
-<!-- https://www.smashingmagazine.com/2012/05/building-real-time-commenting-system/ -->
 <?php
 date_default_timezone_set('UTC');
 

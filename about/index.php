@@ -1,6 +1,7 @@
 <?php
 require('pusher_config.php');
 require('Persistence.php');
+require __DIR__ . '/vendor/autoload.php';
 $comment_post_ID = 1;
 $db = new Persistence();
 $comments = $db->get_comments($comment_post_ID);
@@ -119,7 +120,8 @@ $has_comments = (count($comments) > 0);
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="/js/app.js"></script>
         <script>
-            var APP_KEY = '<?php echo(APP_KEY); ?>';    // Need APP_KEY to connect to Pusher at runtime
+            var APP_KEY = '<?php echo(APP_KEY); ?>';
+            // Need APP_KEY to connect to Pusher at runtime
         </script>
         <!-- <script>
             // Enable pusher logging - don't include this in production

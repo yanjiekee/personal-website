@@ -6,6 +6,7 @@ $(function() {
 
 // When the form is posted, it is captured by Ajax
 function handleSubmit() {
+    console.log("HANDLESUBMIT");
     var form = $(this);
     var data = {
         "comment_author": form.find('#comment_author').val(),
@@ -25,6 +26,7 @@ function handleSubmit() {
 // Headers: An object of additional header key/value pairs to send along with request.
 // Success, Error: Callback functions
 function postComment(data) {
+    console.log("POSTCOMMENT");
     $.ajax({
        type: 'POST',
        url: '/about/post_comment.php',
@@ -38,7 +40,10 @@ function postComment(data) {
      });
 }
 
+// data = echo from json_encode, textStatus is either 201 or 400
+// XHR = XML Http Request
 function postSuccess(data, textStatus, jqXHR) {
+    console.log("POSTSUCCESS");
     // get() method: loads data from the server using a HTTP GET request.
     // reset(): resets the values of all elements in a form
     $('#commentform').get(0).reset();
@@ -46,7 +51,10 @@ function postSuccess(data, textStatus, jqXHR) {
 }
 
 function postError(jqXHR, textStatus, errorThrown) {
-  // display error
+    // display error
+    console.log("POSTERROR");
+    console.log(textStatus);
+    console.log(jqXHR);
 }
 
 function displayComment(data) {
