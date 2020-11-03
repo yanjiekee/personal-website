@@ -114,8 +114,13 @@ $has_comments = (count($comments) > 0);
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
         <!-- For comment section -->
+        <!-- Client-side Pusher lib -->
+        <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="js/app.js"></script>
+        <script src="/js/app.js"></script>
+        <script>
+            var APP_KEY = '<?php echo(APP_KEY); ?>';    // Need APP_KEY to connect to Pusher at runtime
+        </script>
         <!-- <script>
             // Enable pusher logging - don't include this in production
             Pusher.logToConsole = true;

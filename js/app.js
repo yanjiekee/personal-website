@@ -90,25 +90,32 @@ function parseDisplayDate(date) {
 }
 
 // To test function displayComment() by pressing 'u'
-$(function() {
+// $(function() {
+//
+//   $(document).keyup(function(e) {
+//     e = e || window.event;
+//     if(e.keyCode === 85){
+//       displayComment({
+//         "id": "comment_1",
+//         "comment_post_ID": 1,
+//         "date":"Tue, 21 Feb 2012 18:33:03 +0000",
+//         "comment": "The realtime Web rocks!",
+//         "comment_author": "Phil Leggetter"
+//       });
+//     }
+//   });
+//
+// });
 
-  $(document).keyup(function(e) {
-    e = e || window.event;
-    if(e.keyCode === 85){
-      displayComment({
-        "id": "comment_1",
-        "comment_post_ID": 1,
-        "date":"Tue, 21 Feb 2012 18:33:03 +0000",
-        "comment": "The realtime Web rocks!",
-        "comment_author": "Phil Leggetter"
-      });
-    }
-  });
+// Creating a Pusher intance connect client to Pusher
+var pusher = new Pusher('94b577f129fd48f41527', {
+      cluster: 'ap1'
+    });
 
-});
+// Channels provide a great way of organizing streams of real-time data.
+// Here we are subscribing to comments for the current blog post,
+// uniquely identified by the value of the comment_post_ID hidden form input element.
+var channel = pusher.subscribe('comments-' + $('#comment_post_ID').val());
 
-// var pusher = new Pusher(APP_KEY, {
-//       cluster: APP_CLUSTER
-//     });
-// var channel = pusher.subscribe('comments-' + $('#comment_post_ID').val());
-// channel.bind('new_comment', displayComment);
+// Event: further filter data and are ideal for linking updates to changes in the UI
+channel.bind('new_comment', displayComment);
