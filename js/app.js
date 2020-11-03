@@ -6,7 +6,7 @@ $(function() {
 
 // When the form is posted, it is captured by Ajax
 function handleSubmit() {
-    console.log("HANDLESUBMIT");
+    // console.log("HANDLESUBMIT");
     var form = $(this);
     var data = {
         "comment_author": form.find('#comment_author').val(),
@@ -14,6 +14,11 @@ function handleSubmit() {
         "comment": form.find('#comment').val(),
         "comment_post_ID": form.find('#comment_post_ID').val()
     };
+
+    var socketId = getSocketId();
+    if(socketId !== null) {
+        data.socket_id = socketId;
+    }
 
     postComment(data);
 
@@ -26,7 +31,7 @@ function handleSubmit() {
 // Headers: An object of additional header key/value pairs to send along with request.
 // Success, Error: Callback functions
 function postComment(data) {
-    console.log("POSTCOMMENT");
+    // console.log("POSTCOMMENT");
     $.ajax({
        type: 'POST',
        url: '/about/post_comment.php',
@@ -43,7 +48,7 @@ function postComment(data) {
 // data = echo from json_encode, textStatus is either 201 or 400
 // XHR = XML Http Request
 function postSuccess(data, textStatus, jqXHR) {
-    console.log("POSTSUCCESS");
+    // console.log("POSTSUCCESS");
     // get() method: loads data from the server using a HTTP GET request.
     // reset(): resets the values of all elements in a form
     $('#commentform').get(0).reset();
@@ -52,7 +57,7 @@ function postSuccess(data, textStatus, jqXHR) {
 
 function postError(jqXHR, textStatus, errorThrown) {
     // display error
-    console.log("POSTERROR");
+    // console.log("POSTERROR");
     console.log(textStatus);
     console.log(jqXHR);
 }
@@ -127,3 +132,11 @@ var channel = pusher.subscribe('comments-' + $('#comment_post_ID').val());
 
 // Event: further filter data and are ideal for linking updates to changes in the UI
 channel.bind('new_comment', displayComment);
+
+
+function getSocketId() {
+  if(pusher && pusher.connection.state === 'connected') {
+    return pusher.connection.socket_id;
+  }
+  return null;
+}

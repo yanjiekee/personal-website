@@ -14,9 +14,10 @@ $added = $db->add_comment($_POST);
 if($added) {
     $channel_name = 'comments-' . $added['comment_post_ID'];
     $event_name = 'new_comment';
+    $socket_id = (isset($_POST['socket_id'])?$_POST['socket_id']:null);
 
     $pusher = new Pusher\Pusher(APP_KEY, APP_SECRET, APP_ID, array('cluster' => APP_CLUSTER));
-    $pusher->trigger($channel_name, $event_name, $added);
+    $pusher->trigger($channel_name, $event_name, $added, $socket_id);
 }
 
 // Seperate into Ajax and Standard (by refreshing the webpage?) response
@@ -57,12 +58,12 @@ function sendStandardResponse($added) {
 }
 
 // De-buggings
-function console_log($output, $with_script_tags = true) {
-    $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
-');';
-    if ($with_script_tags) {
-        $js_code = '<script>' . $js_code . '</script>';
-    }
-    echo $js_code;
-}
+// function console_log($output, $with_script_tags = true) {
+//     $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
+// ');';
+//     if ($with_script_tags) {
+//         $js_code = '<script>' . $js_code . '</script>';
+//     }
+//     echo $js_code;
+// }
 ?>
