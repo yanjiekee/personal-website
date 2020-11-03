@@ -27,7 +27,7 @@ function handleSubmit() {
 function postComment(data) {
     $.ajax({
        type: 'POST',
-       url: 'post_comment.php',
+       url: '/about/post_comment.php',
        data: data,
        headers: {
          'X-Requested-With': 'XMLHttpRequest'
